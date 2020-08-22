@@ -29,19 +29,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
-        <alibaba-spring-cloud.version>0.9.0.RELEASE</alibaba-spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <alibaba-spring-cloud.version>2.1.2.RELEASE</alibaba-spring-cloud.version>
         <nacos.version>0.2.1.RELEASE</nacos.version>
         <swagger.version>2.9.2</swagger.version>
+        <sentinel.version>0.2.1.RELEASE</sentinel.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -58,6 +53,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.2</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
@@ -71,20 +72,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- nacos-discovery集成 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
                 <version>${nacos.version}</version>
             </dependency>
+            <!-- nacos-config集成 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
                 <version>${nacos.version}</version>
             </dependency>
+            <!-- sentinel集成 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${nacos.version}</version>
+                <version>${sentinel.version}</version>
             </dependency>
             <!-- swagger集成 -->
             <dependency>
@@ -113,26 +117,13 @@
     </dependencyManagement>
 
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-    <repositories>
-        <repository>
-            <id>alimaven</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>
