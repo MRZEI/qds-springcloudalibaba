@@ -7,10 +7,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: 2bc5565f-453f-4b1c-bde4-eafe23bdb2f0
+        namespace: 8355ca4c-598c-4422-a724-a952df9d613f
       config:
         server-addr: 127.0.0.1:8848
-        namespace: 2bc5565f-453f-4b1c-bde4-eafe23bdb2f0
+        namespace: 8355ca4c-598c-4422-a724-a952df9d613f
         file-extension: properties
         shared-dataids: qds-alibaba-sentinel.properties
         refreshable-dataids: qds-alibaba-sentinel.properties
