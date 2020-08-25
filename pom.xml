@@ -113,7 +113,7 @@
                 <artifactId>json-lib-ext-spring</artifactId>
                 <version>1.0.2</version>
             </dependency>
-            <!--解决nacos总是注册到public，则需要用高版本1.3.1fu'g-->
+            <!--解决nacos总是注册到public，则需要用高版本1.3.1覆盖-->
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
